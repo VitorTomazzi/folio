@@ -37,7 +37,7 @@ export default class ContactPage extends Component {
 		});
 
 		axios
-			.post('http://localhost:5000/api/sendMail', this.state)
+			.post('/api/sendMail', this.state)
 			.then((res) => {
 				if (res.data.success) {
 					this.setState({
