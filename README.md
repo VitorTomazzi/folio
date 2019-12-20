@@ -1,43 +1,21 @@
-# MERN boilerplate | Ironhack Fullstack Application
+# MERN | Portfolio Fullstack Application
 
+- [About](#about)
 - [Generate the project](#generate-the-project)
 - [Global information](#global-information)
 - [How to implement a Full Stack feature?](#how-to-implement-a-full-stack-feature)
-- [Example in the code](#example-in-the-code)
 - [Deployement on Heroku](#deployement-on-heroku)
 - [Guideline to create clean code](#guideline-to-create-clean-code)
 
+## About
+
+Here is the code used for my portfolio website along with instructions for setting up your own!
+
 ## Generate the project
 
-### Solution 1 | Generate the project with the Github template feature
+### MERN | Generate the project with the Github
 
-Click on the button [*Use this template*](https://github.com/mc100s/mern-hooks-boilerplate/generate) on this page and create a new GitHub repository.
-
-Then you can clone the project and add a `server/.env` file, with for example the following values:
-```
-PORT=5000
-SESSION_SECRET=anyValue
-MONGODB_URI=mongodb://localhost/mern-project
-```
-
-
-
-### Solution 2 | Generate the project with `iron-mern-generator`
-
-If you want to create a MERN website called `project3`, you can simply type in the terminal:
-```
-$ npx iron-mern-generator project3
-```
-
-If you want to publish the project to GitHub, you can type:
-```
-$ git remote add origin https://github.com/user/my-project.git
-```
-
-If another person wants to clone the project, he has to:
-- Clone the project
-- Run `npm install` to install all the dependencies
-- Add a file `server/.env` file
+For MERN boilerplate, check out @https://github.com/mc100s/mern-hooks-boilerplate/generate
 
 
 ## Useful commands
@@ -115,26 +93,6 @@ README.md
 2. Test it with Postman with many different cases
 3. Create a new API method in `client/src/api.js`
 4. Consume the API method in your client :)
-
-## Example in the code
-
-### `server/routes/auth.js`
-
-- `router.post('/signup')`: Route to create a new user
-- `router.post('/login')`: Route to send the user JWT 
-- `router.get('/secret')`: Route where the user need to be authenticated
-
-
-### `server/routes/users.js`
-
-- `router.get('/')`: Route to get all users
-- `router.post('/first-user/pictures')`: Route to add a picture on one user with Cloudinary
-
-
-### `server/routes/countries.js`
-
-- `router.get('/')`: Route to get all countries
-- `router.post('/')`: Route to add a country
 
 
 
