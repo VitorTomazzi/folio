@@ -10,6 +10,7 @@ const logger = require('morgan');
 const nocache = require('nocache');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const sendGrid = require('@sendGrid/mail');
 
 require('./configs/database');
 
@@ -50,9 +51,36 @@ app.use(
 );
 require('./passport')(app);
 
-app.use('/api', require('./routes/index'));
-app.use('/api', require('./routes/auth'));
-app.use('/api/countries', require('./routes/countries'));
+//SendGrid emailing
+app.post('/api/sendMail', (req, res, next) => {
+	// sendGrid.setApiKey('');
+	// using Twilio SendGrid's v3 Node.js Library
+	// https://github.com/sendgrid/sendgrid-nodejs
+	sendGrid.setApiKey(process.env.SENDGRID_API_KEY);
+	const msg = {
+		to: 'vitor.c.tomazzi@gmail.com',
+		from: req.body.email,
+		subject: 'Contact Request from Vitor[Codes]',
+		text: req.body.message
+	};
+	sendGrid
+		.send(msg)
+		.then((result) => {
+			res.status(200).json({
+				success: true
+			});
+		})
+		.catch((err) => {
+			console.log('error', err);
+			res.status(401).json({
+				success: false
+			});
+		});
+});
+
+// app.use('/api', require('./routes/index'));
+// app.use('/api', require('./routes/auth'));
+// app.use('/api/countries', require('./routes/countries'));
 
 // For any routes that starts with "/api", catch 404 and forward to error handler
 app.use('/api/*', (req, res, next) => {
