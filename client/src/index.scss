@@ -14,86 +14,108 @@ $primary: #32c3ff;
 // import { Button } from 'reactstrap';
 // <Button color="danger">Danger!</Button>
 // ----------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,700&display=swap');
 
 // --------------------
 // Style reusable for all components
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
 }
 
 .info {
-  margin: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  display: inline-block;
-  background-color: #5776e9;
-  color: white;
+	margin: 20px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	display: inline-block;
+	background-color: #5776e9;
+	color: white;
 }
 
 .info.info-danger {
-  background-color: #e73f3f;
+	background-color: #e73f3f;
 }
 
 // --------------------
 // Style for App component
 .App {
-  text-align: center;
+	text-align: center;
 
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+		height: 80px;
+	}
 
-  .App-header {
-    background-color: $primary;
-    padding: 20px;
-    color: white;
+	.App-header {
+		background-color: $primary;
+		padding: 20px;
+		color: white;
 
-    a {
-      color: white;
-      padding: 0 5px;
-      text-decoration: unset;
-    }
+		a {
+			color: white;
+			padding: 0 5px;
+			text-decoration: unset;
+		}
 
-    a.active {
-      font-weight: bold;
-    }
-  }
+		a.active {
+			font-weight: bold;
+		}
+	}
 
-  .App-title {
-    font-size: 1.5em;
-  }
+	.App-title {
+		font-size: 1.5em;
+	}
 
-  .App-intro {
-    font-size: large;
-  }
+	.App-intro {
+		font-size: large;
+	}
 
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
+	@keyframes App-logo-spin {
+		from {
+			transform: rotate(0deg);
+		}
 
-    to {
-      transform: rotate(360deg);
-    }
-  }
+		to {
+			transform: rotate(360deg);
+		}
+	}
 }
 
 // --------------------
 // Style for Home component
 .Home {
-  p {
-    font-size: 1.2em;
-  }
+	p {
+		font-size: 1.2em;
+	}
 }
 
 // --------------------
 // Style for Secret component
 .Secret {
-  .result {
-    font-size: 1.2em;
-    color: $primary;
-  }
+	.result {
+		font-size: 1.2em;
+		color: $primary;
+	}
+}
+
+//custom styles
+.bfont {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+}
+
+.lfont {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+}
+
+.success-msg {
+	color: #57a773;
+	padding: 1rem;
+}
+
+.error-msg {
+	color: #ee6352;
+	padding-left: 1rem;
 }
